@@ -7,7 +7,7 @@ relations = ['oWant', 'AtLocation', 'oReact', 'xWant', 'ObjectUse', 'HinderedBy'
 print(len(relations))
 
 print(relations)
-files = glob.glob('atomic2020_data-feb2021/*.tsv')
+files = glob.glob('atomic2020_data/*.tsv')
 for file in files:
     with open(file) as in_file:
         tsv_file = csv.reader(in_file, delimiter="\t")
@@ -84,7 +84,7 @@ for file in files:
                 sentence = head + ' is made up from ' + tail
                 sentence = sentence.replace('___', '')
             kg.append({'entity': line, 'sentence': sentence})
-print(kg)
+#print(kg)
 # list_set = set(relations)
 # uniq_rel = list(list_set)
 # print(uniq_rel)
